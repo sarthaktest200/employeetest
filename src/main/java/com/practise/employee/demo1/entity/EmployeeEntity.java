@@ -10,8 +10,7 @@ public class EmployeeEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	
+	private int id;	
 	private String name;
 	
 	public EmployeeEntity() {

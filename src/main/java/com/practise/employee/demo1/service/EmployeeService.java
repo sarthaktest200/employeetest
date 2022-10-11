@@ -11,6 +11,8 @@ public interface EmployeeService {
 	
 	public List<EmployeeEntity> getAllEmployees();
 	
+	public EmployeeEntity getEmployeById(int id);
+	
 	public EmployeeEntity addEmployee(EmployeeEntity newEmployee);
 
 }

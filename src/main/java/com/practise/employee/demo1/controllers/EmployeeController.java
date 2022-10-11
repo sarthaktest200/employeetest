@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,5 +25,11 @@ public class EmployeeController {
 	public ResponseEntity<List<EmployeeEntity>> getAllEmployees() {
 		List<EmployeeEntity> empList = empService.getAllEmployees();
 		return new ResponseEntity<>(empList, HttpStatus.ACCEPTED);
+	}
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<EmployeeEntity> getEmployeeById(@PathVariable("id") int id) {
+		EmployeeEntity emp = empService.getEmployeById(id);
+		return new ResponseEntity<>(emp, HttpStatus.ACCEPTED);
 	}
 }
